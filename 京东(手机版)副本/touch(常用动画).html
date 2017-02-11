@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>测试</title>
+    <style type="text/css">
+    		#box{
+    			width: 200px;
+    			height: 200px;
+    			background-color: red;
+    		}
+    </style>
+    
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+</body>
+	<script type="text/javascript" src="js/touch.js" ></script>
+	<script type="text/javascript">
+//  		//利用startRotate, 单指触发滚动事件
+//  		//rotation
+//  		
+//  		var box=document.getElementById('box');
+//  		//存角度
+//  		var angle=0;
+//  		//startRotate比较的引入，preventDefault阻止默认事件，
+//		touch.on('#box','touchstart',function(ev){
+//			//引入比较函数startRotate()
+//			ev.startRotate();
+//			ev.preventDefault();				
+//		});
+//		//rotate  touch.js-封装的旋转事件方法
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		touch.on('#box','rotate',function(ev){
+////				box.innerHTML=ev.fingersCount;//手指个数
+////				box.innerHTML=ev.rotation;//旋转的角度
+//				box.innerHTML=ev.fingerStatus;//移动事件名称
+////			最终旋转角度totalAngle			
+//			var totalAngle=angle+ev.rotation;
+//				//判断旋转是否结束
+//			if(ev.fingerStatus=='end'){
+//				//每次改变angle的值-加上上一次结束时候的角度
+//				angle=angle+ev.rotation;
+//			}
+//			 //赋值
+//			this.style.webkitTransform='rotate('+totalAngle+'deg)';
+//		});
+
+
+
+
+
+//scale双指放大与缩小目标
+//		var box=document.getElementById('box');
+//		//伸缩属性 全部 运动样式和时间
+//		box.style.webkitTransition='all ease 0.05s';
+//		touch.on('#box','touchstart',function(ev){
+//			//阻止默认事件
+//			ev.preventDefault();
+//		})
+//		//初始值
+//		var initialScale=1;
+//		var currentScale;
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		//pinchstart-放大缩小开始，pinchend-放大缩小结束
+//		touch.on('#box','pinchend',function(ev){
+//		    //box.innerHTML=ev.type;//事件
+//			//box.innerHTML=ev.scale;//放大缩小的倍数值
+//			//变化量
+//			currentScale=ev.scale-1;
+//			//缩放后大小
+//			currentScale = initialScale + currentScale;
+//			//放大的最大范围为2倍
+//			currentScale = currentScale > 2 ? 2 : currentScale;
+//			//缩小的最小倍数为1
+//			currentScale = currentScale < 1 ? 1 : currentScale;
+//			this.style.webkitTransform = 'scale(' + currentScale + ')';
+//			alert("当前缩放比例为:" + currentScale );
+//
+//		})
+//		//结束时候 initialScale初始值重新赋值
+//		touch.on('#box', 'pinchend', function(ev){
+//			initialScale = currentScale;
+//		});
+
+
+
+
+
+//识别tap, doubletap和hold事件.
+//		var box=document.getElementById('box');
+//		touch.on('#box','touchstart',function(ev){
+//			//阻止默认事件
+//			ev.preventDefault();
+//		})
+//		touch.on('#box', 'hold tap doubletap', function(ev){
+//   			 alert(ev.type);
+//		});
+
+
+//向左, 向右swipe滑动
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		touch.on('#box','touchstart',function(ev){
+//			//阻止默认事件
+//			ev.preventDefault();
+//		});
+//		var box=document.getElementById('box');
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		touch.on(box,'swiperight',function(ev) {
+//			//坐标
+//			this.style.webkitTransform='translate3d('+300+'px,0,0)';//此处直接加数值，表示移动的终点位置
+//			console.log('向右滑动');
+//		});
+//		touch.on(box,'swipeleft',function(ev) {
+//			this.style.webkitTransform='translate3d('+100+'px,0,0)';//此处直接加数值，表示移动的终点位置
+//			console.log('向左滑动');
+//		});
+//		touch.on(box,'swipeup',function(ev) {
+//			this.style.webkitTransform='translate3d(0,'+200+'px,0)';//此处直接加数值，表示移动的终点位置
+//			console.log('向上滑动');
+//		});
+//		touch.on(box,'swipedown',function(ev) {
+//			this.style.webkitTransform='translate3d(0,'+300+'px,0)';//此处直接加数值，表示移动的终点位置
+//			console.log('向下滑动');
+//		});
+
+
+//抓取并移动目标
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		touch.on('#box','touchstart',function(ev){
+//			//阻止默认事件
+//			ev.preventDefault();
+//		});
+//		var box=document.getElementById('box');
+//		var dx,dy;
+//		//touch.on("目标元素","事件名称","执行函数fn");
+//		touch.on(box,'drag',function(ev){
+//			//此语句的含义是：第一次抓取移动式的初始值为0，第一次之后的动作以前者的终点位置为初始值；
+//			dx=dx||0;
+//			dy=dy||0;
+//			console.log('当前x值为:'+dx+'当前值为:'+dy);
+//			//移动中的当前位置
+//			var offx=dx+ev.x+'px';
+//			var offy=dy+ev.y+'px';
+//			this.style.webkitTransform='translate3d('+offx+','+offy+',0)';
+//		});
+//		//移动结束之后的位置
+//		touch.on(box,'dragend',function(ev){
+//			dx+=ev.x;
+//			dy+=ev.y;
+//		});
+
+
+
+//当前所做的动作对应的原生事件为: mousemove移动（touchmove）；  mouseup（按下）松开（touchend）； mousedown 按下（touchstart）；
+//		touch.on('#box', 'touchstart touchmove touchend', function(ev){
+//  			console.log(ev.type);
+//		});
+   		
+    </script>
+</html>
